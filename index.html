@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Footprints of Frank</title>
+<meta name="description" content="A thirty-inch stuffed zebra, his road, and the people he's made smile along the way. Since April 13, 2022.">
+<meta property="og:title" content="Footprints of Frank">
+<meta property="og:description" content="A thirty-inch stuffed zebra, his road, and the people he's made smile along the way.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://footprintsoffrank.com">
+<meta property="og:image" content="https://footprintsoffrank.com/frank-meeting.jpg">
+<!--
+  FRANK'S POSTING RULES
+  1. PG. The Independence Academy is the lodestar.
+  2. Other people's kids: photos only with consent, no names.
+  3. The bourbon jokes are seasoning. The road is the meal.
+  4. Frank speaks first person. The Storyteller speaks third. John speaks plain.
+  5. Fun first. Always.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231a1a1c'/%3E%3Cpath d='M4 6h2v20H4zM10 4h2v24h-2zM16 6h2v20h-2zM22 8h2v18h-2zM26 12h2v12h-2z' fill='%23f0ede5'/%3E%3Crect x='0' y='0' width='2' height='32' fill='%23A82423'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#1a1a1c;--bg-deep:#0a0a0b;--bg-hdr:#050506;
+  --fg:#f0ede5;--fg2:#bab6ad;--fg3:#7c7870;--paper:#d4cfc1;
+  --red:#A82423;--red-dk:#6b1716;--edge:#2a2a2c;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Lora',Georgia,serif;background:var(--bg);
+  color:var(--fg);line-height:1.65;font-size:18px;overflow-x:hidden;
+  background-image:radial-gradient(ellipse at top,#1f1f22 0%,var(--bg) 50%,#131315 100%);
+  background-attachment:fixed;
+}
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;opacity:.5;mix-blend-mode:overlay;z-index:1;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.rail{
+  position:fixed;left:0;top:0;bottom:0;width:7px;z-index:100;
+  background:linear-gradient(180deg,var(--red-dk) 0%,var(--red) 8%,var(--red) 92%,var(--red-dk) 100%);
+  box-shadow:2px 0 12px rgba(168,36,35,0.18);
+  transform:scaleY(0);transform-origin:top;
+  animation:rail-draw 1.1s cubic-bezier(.65,0,.35,1) .1s forwards;
+}
+@keyframes rail-draw{to{transform:scaleY(1)}}
+header{
+  background:var(--bg-hdr);padding:2.4rem 2rem 2rem 3rem;
+  position:relative;z-index:10;
+  opacity:0;animation:fade-down .7s ease-out .6s forwards;
+}
+@keyframes fade-down{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
+.brand{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5vw,3.4rem);letter-spacing:.18em;color:var(--fg);line-height:1;text-shadow:0 2px 0 rgba(0,0,0,.4)}
+.tagline{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(.95rem,1.5vw,1.15rem);color:var(--fg2);margin-top:.6rem}
+.zebra-border{
+  position:absolute;bottom:0;left:0;right:0;height:6px;
+  background-image:repeating-linear-gradient(88deg,var(--fg) 0,var(--fg) 11px,var(--bg-hdr) 11px,var(--bg-hdr) 18px,var(--fg) 18px,var(--fg) 27px,var(--bg-hdr) 27px,var(--bg-hdr) 36px);
+}
+main{position:relative;z-index:5;padding:0 clamp(1.5rem,5vw,4rem) 0 clamp(2rem,6vw,5rem);max-width:1180px}
+section{padding:clamp(3rem,7vw,5.5rem) 0 clamp(2rem,4vw,3rem);border-bottom:1px solid var(--edge)}
+section:last-of-type{border-bottom:none}
+@keyframes fade-in{to{opacity:1}}
+@keyframes hero-rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+
+/* HERO */
+.hero{padding-top:clamp(2.5rem,6vw,5rem);padding-bottom:clamp(2.5rem,6vw,4.5rem);display:grid;grid-template-columns:1fr;gap:2.5rem;align-items:center}
+@media(min-width:880px){.hero{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:3.5rem}}
+.hero-mark{
+  font-family:'Bebas Neue',sans-serif;font-size:clamp(6rem,18vw,14rem);line-height:.85;letter-spacing:-.015em;
+  color:var(--fg);margin-left:-.06em;
+  text-shadow:0 4px 32px rgba(0,0,0,.65);
+  opacity:0;animation:hero-rise 1s cubic-bezier(.2,.7,.2,1) 1s forwards;
+}
+.hero-subhead{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(1.4rem,2.6vw,2.1rem);color:var(--paper);margin-top:.2em;line-height:1.25;opacity:0;animation:fade-in .8s ease-out 1.4s forwards}
+.hero-subhead em{color:var(--red);font-style:italic}
+.hero-body{font-size:clamp(1rem,1.3vw,1.1rem);color:var(--paper);max-width:32em;margin-top:1.8rem;line-height:1.75;opacity:0;animation:fade-in .8s ease-out 1.7s forwards}
+.hero-cta{margin-top:2rem;display:flex;gap:.9rem;flex-wrap:wrap;opacity:0;animation:fade-in .8s ease-out 2s forwards}
+.hero-photo{position:relative;opacity:0;animation:fade-in 1s ease-out 1.2s forwards}
+.hero-photo::before,.hero-photo::after{content:'';position:absolute;width:36px;height:36px;pointer-events:none}
+.hero-photo::before{top:-9px;left:-9px;border-top:2px solid var(--red);border-left:2px solid var(--red)}
+.hero-photo::after{bottom:-9px;right:-9px;border-bottom:2px solid var(--red);border-right:2px solid var(--red)}
+
+/* SHARED PHOTO */
+.hero-photo img,.origin-photo img,.cast-photo img{
+  width:100%;height:auto;display:block;border:1px solid var(--edge);
+  box-shadow:0 18px 50px rgba(0,0,0,.55),0 4px 12px rgba(0,0,0,.4);
+}
+.photo-caption{font-family:'Fraunces',serif;font-style:italic;font-size:.85rem;color:var(--fg3);margin-top:.8rem;line-height:1.4}
+.photo-caption strong{font-style:normal;font-family:'Bebas Neue',sans-serif;letter-spacing:.15em;color:var(--fg2);font-weight:400;font-size:.78rem;display:block;margin-bottom:.3rem}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:.6rem;font-family:'Bebas Neue',sans-serif;font-size:1.05rem;letter-spacing:.14em;color:var(--fg);text-decoration:none;padding:.85rem 1.5rem;border:1px solid var(--edge);background:rgba(255,255,255,.02);transition:all .25s ease}
+.btn:hover{border-color:var(--red);background:rgba(168,36,35,.08);transform:translateY(-1px)}
+.btn svg{width:18px;height:18px;fill:currentColor}
+
+/* HEADINGS */
+.section-label{font-family:'Bebas Neue',sans-serif;letter-spacing:.2em;font-size:.85rem;color:var(--red);margin-bottom:1.2rem;display:flex;align-items:center;gap:.8rem}
+.section-label::before{content:'';width:24px;height:1px;background:var(--red)}
+h2.section-title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.8rem,3.5vw,2.6rem);color:var(--paper);margin-bottom:1.6rem;letter-spacing:-.015em;line-height:1.15;max-width:22em}
+h2.section-title em{font-style:italic;font-weight:400;color:var(--fg)}
+
+/* ORIGIN */
+.origin-grid{display:grid;grid-template-columns:1fr;gap:2.5rem;align-items:start}
+@media(min-width:880px){.origin-grid{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:3rem}}
+.body-prose p{font-size:1.08rem;color:var(--fg);line-height:1.8;max-width:36em;margin-bottom:1.4rem}
+.body-prose p.muted{color:var(--fg2);font-style:italic}
+.body-prose a{color:var(--paper);text-decoration:none;border-bottom:1px solid var(--red);padding-bottom:1px;transition:color .2s}
+.body-prose a:hover{color:var(--red)}
+.timestamp-note{font-family:'Fraunces',serif;font-style:italic;font-size:.95rem;color:var(--fg3);margin-top:1.6rem;padding-top:1.4rem;border-top:1px solid var(--edge);max-width:36em;line-height:1.6}
+.timestamp-note strong{font-style:normal;font-family:'Bebas Neue',sans-serif;letter-spacing:.12em;color:var(--fg2);font-weight:400;font-size:.85rem;display:block;margin-bottom:.4rem}
+
+/* CAST */
+.cast-chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:1rem;margin:1.2rem 0 1.6rem}
+.chip{border:1px solid var(--edge);background:rgba(255,255,255,.02);transition:border-color .25s;overflow:hidden}
+.chip:hover{border-color:var(--red)}
+.chip-thumb{width:100%;aspect-ratio:1;object-fit:cover;display:block;border-bottom:1px solid var(--edge);filter:contrast(1.03)}
+.chip-thumb-placeholder{width:100%;aspect-ratio:1;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(160deg,#1a1a1c 0,#1a1a1c 8px,#222224 8px,#222224 14px);border-bottom:1px solid var(--edge)}
+.chip-thumb-placeholder span{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:rgba(255,255,255,0.12);letter-spacing:.1em}
+.chip-text{padding:.65rem .75rem}
+.chip-name{font-family:'Fraunces',serif;font-weight:600;font-size:.95rem;color:var(--fg);display:block}
+.chip-role{font-family:'Lora',serif;font-style:italic;font-size:.78rem;color:var(--fg3);display:block;margin-top:.2rem;line-height:1.35}
+.cast-note{font-family:'Fraunces',serif;font-style:italic;font-size:.95rem;color:var(--fg3);margin-top:.5rem}
+.pull-quote{
+  font-family:'Fraunces',serif;font-style:italic;font-weight:400;
+  font-size:clamp(1.1rem,1.8vw,1.35rem);color:var(--paper);
+  border-left:2px solid var(--red);padding:.6rem 0 .6rem 1.4rem;
+  margin:2rem 0;max-width:32em;line-height:1.5;
+}
+
+/* CAST PHOTOS */
+.cast-photos{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:2.5rem;align-items:flex-start}
+.cast-photo-item{flex:1;min-width:200px;max-width:280px}
+
+/* COMING */
+.coming .body-prose p{color:var(--fg2)}
+
+/* FOOTER */
+footer{background:var(--bg-deep);padding:3.5rem clamp(2rem,6vw,5rem) 2.5rem;margin-top:2rem;border-top:1px solid var(--edge);position:relative;z-index:5}
+footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background-image:repeating-linear-gradient(88deg,var(--fg) 0,var(--fg) 9px,var(--bg-deep) 9px,var(--bg-deep) 15px,var(--fg) 15px,var(--fg) 22px,var(--bg-deep) 22px,var(--bg-deep) 30px)}
+.ia-line{font-family:'Fraunces',serif;font-style:italic;font-size:1.05rem;color:var(--paper);max-width:42em;line-height:1.6;margin-bottom:2rem}
+.ia-line a{color:var(--paper);text-decoration:none;border-bottom:1px solid var(--red)}
+.ia-line a:hover{color:var(--red)}
+.footer-meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-top:1.5rem;border-top:1px solid var(--edge);font-family:'Lora',serif;font-size:.85rem;color:var(--fg3)}
+.footer-meta .birthday{font-style:italic}
+.footer-meta .birthday strong{font-style:normal;font-family:'Bebas Neue',sans-serif;letter-spacing:.15em;color:var(--fg2);font-weight:400}
+
+@media(max-width:640px){
+  body{font-size:17px}.rail{width:4px}
+  header{padding:1.6rem 1.2rem 1.4rem 1.6rem}
+  main{padding-left:1.4rem;padding-right:1.2rem}
+  footer{padding-left:1.4rem;padding-right:1.2rem}
+  .hero-cta{flex-direction:column;align-items:flex-start}
+  .btn{width:100%;justify-content:center}
+  .footer-meta{flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;animation-delay:0 !important}}
+</style>
+</head>
+<body>
+
+<div class="rail"></div>
+
+<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" style="position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none">
+  <defs>
+    <filter id="zf" x="-200" y="-1500" width="2800" height="5000" filterUnits="userSpaceOnUse">
+      <feTurbulence type="turbulence" baseFrequency="0.006 0.0022" numOctaves="4" seed="17" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="40" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <g filter="url(#zf)" opacity="0.10">
+    <path fill="white" d="M-100,-282 L1700,-1038 L1700,-1073 L-100,-317Z"/>
+    <path fill="white" d="M-100,-139 L1700,-895 L1700,-917 L-100,-161Z"/>
+    <path fill="white" d="M-100,28 L1700,-728 L1700,-783 L-100,-28Z"/>
+    <path fill="white" d="M-100,165 L1700,-591 L1700,-621 L-100,135Z"/>
+    <path fill="white" d="M-100,324 L1700,-432 L1700,-480 L-100,276Z"/>
+    <path fill="white" d="M-100,463 L1700,-293 L1700,-318 L-100,438Z"/>
+    <path fill="white" d="M-100,631 L1700,-125 L1700,-187 L-100,569Z"/>
+    <path fill="white" d="M-100,769 L1700,13 L1700,-25 L-100,731Z"/>
+    <path fill="white" d="M-100,914 L1700,158 L1700,130 L-100,886Z"/>
+    <path fill="white" d="M-100,1075 L1700,319 L1700,269 L-100,1025Z"/>
+    <path fill="white" d="M-100,1217 L1700,461 L1700,427 L-100,1183Z"/>
+    <path fill="white" d="M-100,1372 L1700,616 L1700,572 L-100,1328Z"/>
+    <path fill="white" d="M-100,1514 L1700,758 L1700,730 L-100,1486Z"/>
+    <path fill="white" d="M-100,1670 L1700,914 L1700,874 L-100,1630Z"/>
+    <path fill="white" d="M-100,1815 L1700,1059 L1700,1029 L-100,1785Z"/>
+  </g>
+</svg>
+
+<header>
+  <div class="brand">Footprints of Frank</div>
+  <div class="tagline">Frank the Happy Zebra makes people's day as he travels and makes new friends</div>
+  <div class="zebra-border"></div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1 class="hero-mark">FRANK</h1>
+      <h2 class="hero-subhead">is on his way <em>here.</em></h2>
+      <p class="hero-body">
+        He's been on the road since April&nbsp;13,&nbsp;2022 &mdash; thirty inches of stuffed zebra,
+        a growing cast of co-conspirators, and four years of small smiles handed out to strangers
+        across the country and around the world.
+        The full archive is being built. In the meantime, he's still out there.
+      </p>
+      <div class="hero-cta">
+        <a class="btn" href="https://www.instagram.com/footprintsoffrank/" target="_blank" rel="noopener" aria-label="Frank on Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23a3.7 3.7 0 0 1-.9 1.38 3.7 3.7 0 0 1-1.38.9c-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.2-.51.44-.88.82-1.26.38-.38.75-.62 1.26-.82.39-.15.97-.33 2.04-.38C8.42 2.17 8.8 2.16 12 2.16zm0 1.95c-3.15 0-3.5.01-4.74.07-1.07.05-1.65.23-2.04.38-.51.2-.88.44-1.26.82-.38.38-.62.75-.82 1.26-.15.39-.33.97-.38 2.04C2.7 8.5 2.69 8.85 2.69 12s.01 3.5.07 4.74c.05 1.07.23 1.65.38 2.04.2.51.44.88.82 1.26.38.38.75.62 1.26.82.39.15.97.33 2.04.38 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c1.07-.05 1.65-.23 2.04-.38.51-.2.88-.44 1.26-.82.38-.38.62-.75.82-1.26.15-.39.33-.97.38-2.04.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.05-1.07-.23-1.65-.38-2.04a3.4 3.4 0 0 0-.82-1.26 3.4 3.4 0 0 0-1.26-.82c-.39-.15-.97-.33-2.04-.38C15.5 4.11 15.15 4.1 12 4.1zm0 3.32a4.58 4.58 0 1 1 0 9.16 4.58 4.58 0 0 1 0-9.16zm0 7.55a2.97 2.97 0 1 0 0-5.94 2.97 2.97 0 0 0 0 5.94zm5.83-7.74a1.07 1.07 0 1 1-2.14 0 1.07 1.07 0 0 1 2.14 0z"/></svg>
+          Instagram
+        </a>
+        <a class="btn" href="https://www.facebook.com/footprintsoffrank/" target="_blank" rel="noopener" aria-label="Frank on Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21.95v-8.7h2.92l.44-3.4h-3.36V7.7c0-.98.27-1.65 1.69-1.65h1.8V3.01a24 24 0 0 0-2.62-.13c-2.6 0-4.38 1.59-4.38 4.5v2.5H7.06v3.4h2.93v8.7h3.5z"/></svg>
+          Facebook
+        </a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="frank-meeting.jpg" alt="John and Frank, eye to eye at the Renaissance bar in Carmel, Indiana — April 13, 2022" loading="eager">
+      <p class="photo-caption">
+        <strong>April 13, 2022 &mdash; 6:28 PM</strong>
+        The first night. John and Frank, eye to eye at the Renaissance bar in Carmel, Indiana.
+        Kelley refused to carry him in. John had to go get him from the car himself.
+      </p>
+    </div>
+  </section>
+
+  <section class="origin">
+    <div class="section-label">The origin</div>
+    <h2 class="section-title">A $50 bet, a room full of antagonists, and a stuffed zebra that got away.</h2>
+    <div class="origin-grid">
+      <div class="body-prose">
+        <p>
+          It was a Tuesday evening in the spring of 2022. The Renaissance Indianapolis North
+          was hosting a charity event for <a href="https://iaindiana.org" target="_blank" rel="noopener">The Independence Academy</a> &mdash;
+          a school for autistic learners in Carmel &mdash; and the common area was lined with
+          silent auction tables. John was at the bar. He noticed a large stuffed zebra among
+          the items, made an offhand comment about buying it, and discovered immediately that
+          some comments cannot be unsaid.
+        </p>
+        <p>
+          His friends &mdash; a group that could generously be described as "encouraging"
+          and more accurately as "merciless" &mdash; issued a challenge. So John walked over,
+          paid $50 for an event ticket, got a bidding number, and returned to the bar.
+          He logged into the auction site from his phone and began bidding.
+        </p>
+        <p>
+          He bid through the evening. He bid with conviction. He bid, ultimately, to $350 &mdash;
+          a number that felt reasonable for a good cause, and perhaps a little reckless for
+          a stuffed animal. Then, in the final moments, some unknown person paid $550 and
+          walked away with the zebra. His friends were delighted. <em>"See? No zebra."</em>
+        </p>
+
+        <div class="pull-quote">
+          "In two weeks, I'll be back at this bar. And there will be a zebra sitting next to me."
+        </div>
+
+        <p>
+          He drove home to Cary, North Carolina the next day and began what can only be called
+          a stuffed zebra procurement operation. Two weeks later, he drove back to Carmel,
+          checked into the Renaissance, and called Kelley &mdash; who he'd been dating for a
+          few months &mdash; as she was leaving work. He asked her to come join him at the bar.
+          What he didn't mention was that a very large box had arrived at her house that afternoon.
+        </p>
+        <p>
+          Kelley got home, found the box, opened it, and sent a selfie &mdash; the one you see here &mdash;
+          from her kitchen. Shortly afterward, her 22-year-old son Zac walked in through the back door,
+          took one look at the situation, held up one hand, said <em>"I don't want to know,"</em>
+          and headed upstairs. Kelley arrived at the Renaissance without the zebra. She had decided,
+          on reflection, that carrying a thirty-inch stuffed animal through a hotel lobby was a line
+          she was not yet ready to cross. John went to the parking lot, retrieved him from the back seat,
+          and walked in himself.
+        </p>
+        <p>
+          He didn't have a name yet. The bar crowd helped with that &mdash; friends were texted, locals
+          were consulted. John's daughter Jessica came through with the winning suggestion: Frank, a nod
+          to "Frank the Fruit Striped Zebra" from Juicy Fruit gum, though this particular zebra was
+          neither fruity nor chewy. Frank was just a good name. It turned out to be more fitting than
+          anyone realized at the time, for a reason that wouldn't fully land until about a year later.
+          That's a story for another post.
+        </p>
+        <div class="timestamp-note">
+          <strong>April 13, 2022 &mdash; Frank's birthday</strong>
+          Both photos on this page were taken that same day &mdash; the kitchen selfie at 4:48&nbsp;PM,
+          the bar photo at 6:28&nbsp;PM. Ninety-nine minutes and a parking lot between them.
+        </div>
+      </div>
+      <div class="origin-photo">
+        <img src="frank-origin.jpg" alt="Kelley's kitchen selfie with Frank fresh out of the box, April 13 2022" loading="lazy">
+        <p class="photo-caption">
+          <strong>4:48 PM &mdash; The unboxing</strong>
+          Kelley's kitchen. The box was very large.
+          Zac walked in, held up a hand, said "I don't want to know,"
+          and went upstairs. She sent this to John
+          and headed for the Renaissance &mdash; without Frank.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cast">
+    <div class="section-label">Meanwhile...</div>
+    <h2 class="section-title">Frank's world keeps growing.</h2>
+    <p style="font-family:'Lora',serif;font-size:1.05rem;color:var(--fg2);max-width:36em;margin-bottom:1.5rem;line-height:1.7">
+      Four years of road trips have a way of multiplying the cast. Full bios and adventures are coming with the blog.
+    </p>
+    <div class="cast-chips">
+      <div class="chip">
+        <img class="chip-thumb" src="thumb-frank.jpg" alt="Frank">
+        <div class="chip-text">
+          <span class="chip-name">Frank</span>
+          <span class="chip-role">the original. thirty inches. rides shotgun.</span>
+        </div>
+      </div>
+      <div class="chip">
+        <img class="chip-thumb" src="thumb-frankjr.jpg" alt="Frank Jr. in his tuxedo at the iWIN gala">
+        <div class="chip-text">
+          <span class="chip-name">Frank Jr.</span>
+          <span class="chip-role">world traveler. two continents. owns a bow tie.</span>
+        </div>
+      </div>
+      <div class="chip">
+        <img class="chip-thumb" src="thumb-micro.jpg" alt="Micro-Frank the finger puppet">
+        <div class="chip-text">
+          <span class="chip-name">Micro&#8209;Frank</span>
+          <span class="chip-role">finger puppet. global impact.</span>
+        </div>
+      </div>
+      <div class="chip">
+        <img class="chip-thumb" src="thumb-pico.jpg" alt="Pico-Frank, a tiny ceramic zebra, sitting in a luxury hotel gift box on white tissue paper">
+        <div class="chip-text">
+          <span class="chip-name">Pico&#8209;Frank</span>
+          <span class="chip-role">you have been Franked.</span>
+        </div>
+      </div>
+      <div class="chip">
+        <img class="chip-thumb" src="thumb-aqua.jpg" alt="Aqua-Frank the colorful pool floatie">
+        <div class="chip-text">
+          <span class="chip-name">Aqua&#8209;Frank</span>
+          <span class="chip-role">pool floatie. briefly. he will return.</span>
+        </div>
+      </div>
+      <div class="chip" style="border-style:dashed">
+        <img class="chip-thumb" src="thumb-more.jpg" alt="Frank's beach crew — gnome, duck, baby, mini horse, and a smiling zebra">
+        <div class="chip-text">
+          <span class="chip-name">&amp; more</span>
+          <span class="chip-role">casting never officially closed.</span>
+        </div>
+      </div>
+    </div>
+    <p class="cast-note">Stay tuned &mdash; each one has a story worth telling.</p>
+  </section>
+
+  <section class="coming">
+    <div class="section-label">What's coming</div>
+    <h2 class="section-title">The full story &mdash; <em>arriving in chapters.</em></h2>
+    <div class="body-prose">
+      <p>
+        Four years of road trips, charity galas, hotel bars, airport lounges, horse races,
+        wedding receptions, a Franknapping at a family reunion, and one truly memorable
+        tuxedo at a charity gala in Indiana. All of it is being written down.
+      </p>
+      <p>
+        Subscribe to nothing. Sign up for nothing. Follow Frank where he already lives,
+        or check back here &mdash; where the longer versions are coming soon.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="ia-line">
+    Frank started with a silent auction at <a href="https://iaindiana.org" target="_blank" rel="noopener">The Independence Academy</a>,
+    a school for autistic learners in Carmel, Indiana.
+    If he ever earns his keep, half comes home.
+  </div>
+  <div class="footer-meta">
+    <div class="birthday">Frank's birthday: <strong>April 13, 2022</strong></div>
+    <div>&copy; 2026 footprintsoffrank.com</div>
+  </div>
+</footer>
+
+</body>
+</html>
