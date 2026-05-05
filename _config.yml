@@ -1,0 +1,50 @@
+# Site
+title: Footprints of Frank
+tagline: Frank the Happy Zebra makes people's day as he travels and makes new friends
+description: >-
+  A thirty-inch stuffed zebra, his road, and the people he's made smile along
+  the way. Since April 13, 2022.
+url: https://footprintsoffrank.com
+baseurl: ""
+lang: en_US
+
+# Default OG image — used by jekyll-seo-tag when a page doesn't specify one.
+image: /frank-meeting.jpg
+
+author:
+  name: John
+
+social:
+  name: Footprints of Frank
+  links:
+    - https://www.instagram.com/footprintsoffrank/
+    - https://www.facebook.com/footprintsoffrank/
+
+# Build
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:slug/
+timezone: America/New_York
+
+# Plugins (all GitHub Pages whitelisted)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Front-matter defaults
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - README.md
+  - CLAUDE.md
+  - .claude

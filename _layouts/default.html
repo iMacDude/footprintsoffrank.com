@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% if page.title %}{{ page.title }} &mdash; {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+<meta name="description" content="{{ page.description | default: page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 200 }}">
+{% seo title=false %}
+{% feed_meta %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231a1a1c'/%3E%3Cpath d='M4 6h2v20H4zM10 4h2v24h-2zM16 6h2v20h-2zM22 8h2v18h-2zM26 12h2v12h-2z' fill='%23f0ede5'/%3E%3Crect x='0' y='0' width='2' height='32' fill='%23A82423'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#1a1a1c;--bg-deep:#0a0a0b;--bg-hdr:#050506;
+  --fg:#f0ede5;--fg2:#bab6ad;--fg3:#7c7870;--paper:#d4cfc1;
+  --red:#A82423;--red-dk:#6b1716;--edge:#2a2a2c;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Lora',Georgia,serif;background:var(--bg);
+  color:var(--fg);line-height:1.65;font-size:18px;overflow-x:hidden;
+  background-image:radial-gradient(ellipse at top,#1f1f22 0%,var(--bg) 50%,#131315 100%);
+  background-attachment:fixed;
+}
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;opacity:.5;mix-blend-mode:overlay;z-index:1;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.rail{
+  position:fixed;left:0;top:0;bottom:0;width:7px;z-index:100;
+  background:linear-gradient(180deg,var(--red-dk) 0%,var(--red) 8%,var(--red) 92%,var(--red-dk) 100%);
+  box-shadow:2px 0 12px rgba(168,36,35,0.18);
+}
+header.site{
+  background:var(--bg-hdr);padding:2.4rem 2rem 2rem 3rem;
+  position:relative;z-index:10;
+}
+header.site a.brand-link{display:inline-block;text-decoration:none;color:inherit}
+.brand{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5vw,3.4rem);letter-spacing:.18em;color:var(--fg);line-height:1;text-shadow:0 2px 0 rgba(0,0,0,.4)}
+.tagline{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(.95rem,1.5vw,1.15rem);color:var(--fg2);margin-top:.6rem}
+.zebra-border{
+  position:absolute;bottom:0;left:0;right:0;height:6px;
+  background-image:repeating-linear-gradient(88deg,var(--fg) 0,var(--fg) 11px,var(--bg-hdr) 11px,var(--bg-hdr) 18px,var(--fg) 18px,var(--fg) 27px,var(--bg-hdr) 27px,var(--bg-hdr) 36px);
+}
+main.site{position:relative;z-index:5;padding:0 clamp(1.5rem,5vw,4rem) 0 clamp(2rem,6vw,5rem);max-width:1180px}
+footer.site{background:var(--bg-deep);padding:3.5rem clamp(2rem,6vw,5rem) 2.5rem;margin-top:4rem;border-top:1px solid var(--edge);position:relative;z-index:5}
+footer.site::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background-image:repeating-linear-gradient(88deg,var(--fg) 0,var(--fg) 9px,var(--bg-deep) 9px,var(--bg-deep) 15px,var(--fg) 15px,var(--fg) 22px,var(--bg-deep) 22px,var(--bg-deep) 30px)}
+.ia-line{font-family:'Fraunces',serif;font-style:italic;font-size:1.05rem;color:var(--paper);max-width:42em;line-height:1.6;margin-bottom:2rem}
+.ia-line a{color:var(--paper);text-decoration:none;border-bottom:1px solid var(--red)}
+.ia-line a:hover{color:var(--red)}
+.footer-meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-top:1.5rem;border-top:1px solid var(--edge);font-family:'Lora',serif;font-size:.85rem;color:var(--fg3)}
+.footer-meta .birthday{font-style:italic}
+.footer-meta .birthday strong{font-style:normal;font-family:'Bebas Neue',sans-serif;letter-spacing:.15em;color:var(--fg2);font-weight:400}
+@media(max-width:640px){
+  body{font-size:17px}.rail{width:4px}
+  header.site{padding:1.6rem 1.2rem 1.4rem 1.6rem}
+  main.site{padding-left:1.4rem;padding-right:1.2rem}
+  footer.site{padding-left:1.4rem;padding-right:1.2rem}
+  .footer-meta{flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;animation-delay:0 !important}}
+</style>
+</head>
+<body>
+
+<div class="rail"></div>
+
+<header class="site">
+  <a class="brand-link" href="{{ '/' | relative_url }}">
+    <div class="brand">{{ site.title }}</div>
+    <div class="tagline">{{ site.tagline }}</div>
+  </a>
+  <div class="zebra-border"></div>
+</header>
+
+<main class="site">
+{{ content }}
+</main>
+
+<footer class="site">
+  <div class="ia-line">
+    Frank started with a silent auction at <a href="https://iaindiana.org" target="_blank" rel="noopener">The Independence Academy</a>,
+    a school for autistic learners in Carmel, Indiana.
+    If he ever earns his keep, half comes home.
+  </div>
+  <div class="footer-meta">
+    <div class="birthday">Frank's birthday: <strong>April 13, 2022</strong></div>
+    <div>&copy; {{ 'now' | date: '%Y' }} footprintsoffrank.com</div>
+  </div>
+</footer>
+
+</body>
+</html>

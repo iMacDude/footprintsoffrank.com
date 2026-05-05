@@ -1,0 +1,67 @@
+---
+layout: default
+---
+<article class="post">
+
+  <div class="post-meta">
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time>
+    {% if page.location %}<span class="post-loc">{{ page.location }}</span>{% endif %}
+  </div>
+
+  <h1 class="post-title">{{ page.title }}</h1>
+  {% if page.subtitle %}<p class="post-subtitle">{{ page.subtitle }}</p>{% endif %}
+
+  {% if page.image %}
+  <figure class="post-hero">
+    <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title }}" loading="eager">
+    {% if page.image_caption %}
+    <figcaption>
+      {% if page.image_label %}<strong>{{ page.image_label }}</strong>{% endif %}
+      {{ page.image_caption }}
+    </figcaption>
+    {% endif %}
+  </figure>
+  {% endif %}
+
+  <div class="post-body body-prose">
+    {{ content }}
+  </div>
+
+  <nav class="post-nav">
+    <a href="{{ '/' | relative_url }}">&larr; Back to footprintsoffrank.com</a>
+  </nav>
+
+</article>
+
+<style>
+.post{max-width:42em;margin:0 auto;padding:clamp(2rem,5vw,4rem) 0 2rem;color:var(--fg)}
+.post-meta{font-family:'Bebas Neue',sans-serif;letter-spacing:.2em;font-size:.85rem;color:var(--red);margin-bottom:1.4rem;display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+.post-meta::before{content:'';width:24px;height:1px;background:var(--red)}
+.post-meta .post-loc{color:var(--fg3)}
+.post-meta .post-loc::before{content:'\\00B7';color:var(--fg3);margin-right:.6rem}
+.post-title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2rem,4.5vw,3rem);color:var(--paper);line-height:1.1;letter-spacing:-.015em;margin-bottom:.7rem}
+.post-subtitle{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(1.1rem,1.8vw,1.3rem);color:var(--fg2);margin-bottom:2rem;line-height:1.4;max-width:32em}
+.post-hero{margin:2.4rem 0 2.6rem;position:relative}
+.post-hero::before,.post-hero::after{content:'';position:absolute;width:30px;height:30px;pointer-events:none}
+.post-hero::before{top:-8px;left:-8px;border-top:2px solid var(--red);border-left:2px solid var(--red)}
+.post-hero::after{bottom:-8px;right:-8px;border-bottom:2px solid var(--red);border-right:2px solid var(--red)}
+.post-hero img{width:100%;height:auto;display:block;border:1px solid var(--edge);box-shadow:0 18px 50px rgba(0,0,0,.55),0 4px 12px rgba(0,0,0,.4)}
+.post-hero figcaption{font-family:'Fraunces',serif;font-style:italic;font-size:.9rem;color:var(--fg3);margin-top:.9rem;line-height:1.5}
+.post-hero figcaption strong{font-style:normal;font-family:'Bebas Neue',sans-serif;letter-spacing:.15em;color:var(--fg2);font-weight:400;font-size:.78rem;display:block;margin-bottom:.3rem}
+.body-prose p{font-size:1.08rem;color:var(--fg);line-height:1.8;margin-bottom:1.4rem}
+.body-prose h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.5rem,2.6vw,1.9rem);color:var(--paper);margin:2.6rem 0 1rem;letter-spacing:-.01em;line-height:1.2}
+.body-prose h3{font-family:'Bebas Neue',sans-serif;letter-spacing:.18em;font-size:1rem;color:var(--red);margin:2.2rem 0 .8rem}
+.body-prose a{color:var(--paper);text-decoration:none;border-bottom:1px solid var(--red);padding-bottom:1px;transition:color .2s}
+.body-prose a:hover{color:var(--red)}
+.body-prose blockquote{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(1.1rem,1.7vw,1.3rem);color:var(--paper);border-left:2px solid var(--red);padding:.6rem 0 .6rem 1.4rem;margin:2rem 0;line-height:1.5;max-width:32em}
+.body-prose img{max-width:100%;height:auto;display:block;margin:2rem 0;border:1px solid var(--edge);box-shadow:0 12px 36px rgba(0,0,0,.45)}
+.body-prose ul,.body-prose ol{padding-left:1.4rem;margin-bottom:1.4rem}
+.body-prose li{font-size:1.08rem;color:var(--fg);line-height:1.8;margin-bottom:.5rem}
+.body-prose em{font-style:italic}
+.body-prose strong{font-weight:600;color:var(--paper)}
+.body-prose code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em;background:rgba(255,255,255,.04);padding:.12em .38em;border-radius:3px}
+.body-prose hr{border:none;border-top:1px solid var(--edge);margin:2.5rem 0}
+.post-nav{margin-top:3rem;padding-top:1.6rem;border-top:1px solid var(--edge);font-family:'Bebas Neue',sans-serif;letter-spacing:.18em;font-size:.95rem}
+.post-nav a{color:var(--fg2);text-decoration:none;transition:color .2s}
+.post-nav a:hover{color:var(--red)}
+</style>
