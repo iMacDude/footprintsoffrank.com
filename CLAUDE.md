@@ -140,9 +140,9 @@ media presence. Frank's Instagram (@footprintsoffrank) launched July 9, 2022.
 ### Key events in the canon (to be expanded as blog posts)
 
 - **The Franknapping** (summer 2022) — Frank Jr. was "abducted" at a family reunion.
-  A ransom note appeared. John's father, the retired detective Captain L. Belen, was consulted.
+  A ransom note appeared. John's brother, retired police Captain L. Belen, was consulted.
   Many fingerprints were found on the note, including his own. No suspects identified.
-  *This is the first blog post. Storyteller voice.*
+  *Storyteller voice.*
 
 - **iWIN Gala** (date TBD from archive) — Frank Jr. attended an Indiana Women in Need
   charity gala in a salmon vest, white dress shirt, and red sequined bow tie.
@@ -163,7 +163,7 @@ media presence. Frank's Instagram (@footprintsoffrank) launched July 9, 2022.
 - **Frank Jr. goes to the Netherlands / Dublin** — passport stamps, John's Bar Dublin,
   Guinness tour, Margraten. *Frank Jr. first-person voice.*
 
-- **Frank's father** — the story of John's dad, Frank Sr., and the irony of the name.
+- **Frank's father** — the story of John's dad, Francis "Frank" Belen Sr., and the irony of the name.
   Has not been written yet. Handle with care. *John sincere voice.*
 
 ---
@@ -280,7 +280,8 @@ Until then: the footer line carries it. No fundraising appeals. Just quiet ackno
 | **Kelley** | John's partner. Frank's reluctant first handler. | Refused to carry Frank into the bar. Her nail polish is #A82423. |
 | **Jessica** | John's daughter. Named Frank. | Juicy Fruit connection. "Frank the Fruit Striped Zebra." |
 | **Zac** | Kelley's son, 22 at the time. | Walked in, saw Frank, said "I don't want to know," went upstairs. Pull quote. |
-| **Captain L. Belen** | John's father. Frank's namesake. Retired detective. | Consulted during the Franknapping. Found his own prints on the ransom note. The name Frank carries more weight than anyone knew at first. Handle his story with care. |
+| **Francis "Frank" Belen Sr.** | John's father. Frank the zebra's namesake. | The zebra's name was suggested by Jessica as a Juicy Fruit cartoon nod, but it landed on the same name as John's dad. The name Frank carries more weight than anyone knew at first. Handle this story with care — *John sincere voice.* |
+| **Captain L. Belen** | John's brother. Retired police captain. | Consulted during the Franknapping. Many fingerprints on the ransom note, including his own. No suspects identified. *Storyteller voice.* |
 
 ---
 

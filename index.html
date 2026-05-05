@@ -135,6 +135,20 @@ h2.section-title em{font-style:italic;font-weight:400;color:var(--fg)}
 .cast-photos{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:2.5rem;align-items:flex-start}
 .cast-photo-item{flex:1;min-width:200px;max-width:280px}
 
+/* LATEST */
+.latest .post-list{display:grid;grid-template-columns:1fr;gap:1.5rem;margin-top:1rem;max-width:42em}
+.post-card{border:1px solid var(--edge);background:rgba(255,255,255,.02);padding:1.6rem 1.8rem;transition:border-color .25s ease}
+.post-card:hover{border-color:var(--red)}
+.post-card-meta{font-family:'Bebas Neue',sans-serif;letter-spacing:.18em;font-size:.78rem;color:var(--red);margin-bottom:.7rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.post-card-meta .post-card-loc{color:var(--fg3)}
+.post-card-meta .post-card-loc::before{content:'·';color:var(--fg3);margin-right:.5rem}
+.post-card-title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.4rem,2.4vw,1.75rem);line-height:1.2;margin-bottom:.7rem;letter-spacing:-.01em}
+.post-card-title a{color:var(--paper);text-decoration:none;transition:color .25s}
+.post-card-title a:hover{color:var(--red)}
+.post-card-excerpt{font-family:'Lora',serif;font-size:1rem;color:var(--fg2);line-height:1.7;margin-bottom:1.1rem;max-width:38em}
+.post-card-cta{font-family:'Bebas Neue',sans-serif;letter-spacing:.16em;font-size:.88rem;color:var(--fg);text-decoration:none;border-bottom:1px solid var(--red);padding-bottom:1px;transition:color .2s}
+.post-card-cta:hover{color:var(--red)}
+
 /* COMING */
 .coming .body-prose p{color:var(--fg2)}
 
@@ -353,6 +367,24 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
       </div>
     </div>
     <p class="cast-note">Stay tuned &mdash; each one has a story worth telling.</p>
+  </section>
+
+  <section class="latest">
+    <div class="section-label">From the road</div>
+    <h2 class="section-title">The blog is open. <em>Frank is writing.</em></h2>
+    <div class="post-list">
+      <article class="post-card">
+        <div class="post-card-meta">
+          <time datetime="2022-07-09">July 9, 2022</time>
+          <span class="post-card-loc">Somewhere Between Here and There</span>
+        </div>
+        <h3 class="post-card-title"><a href="/2022/07/frank-hits-the-road/">Frank Hits the Road</a></h3>
+        <p class="post-card-excerpt">
+          Dad and I have been putting some miles down this summer &mdash; real miles, the kind where the cooler is in the back seat, the cup holder is mine, and the road keeps unrolling like a long gray ribbon out ahead of us&hellip;
+        </p>
+        <a class="post-card-cta" href="/2022/07/frank-hits-the-road/">Read the full post &rarr;</a>
+      </article>
+    </div>
   </section>
 
   <section class="coming">
