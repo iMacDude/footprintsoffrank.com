@@ -300,16 +300,19 @@ Until then: the footer line carries it. No fundraising appeals. Just quiet ackno
 - [x] Design system locked (colors, fonts, texture, red rail)
 - [x] All cast thumbnails cropped and uploaded
 - [x] CLAUDE.md created
+- [x] Jekyll scaffold (2026-05-04): `_config.yml`, `_layouts/default.html`, `_layouts/post.html`, `_posts/`, `assets/images/posts/<slug>/`. `index.html` left untouched as homepage; layouts mirror its palette and typography.
+- [x] First blog post published (2026-05-04): "Frank Hits the Road" (dated 2022-07-09, Frank voice). Diverged from the original plan — Franknapping had been scheduled as the first post.
+- [x] "From the road" post-card section added to homepage between cast and coming.
+- [x] `.gitignore` added (`.DS_Store`, `_site/`, `.jekyll-cache/`, `.jekyll-metadata`, `.bundle/`, `vendor/`, `Gemfile.lock`).
+- [x] CLAUDE.md corrected (2026-05-04): Captain L. Belen is John's *brother* (retired police captain); Francis "Frank" Belen Sr. is the *father* and the zebra's namesake.
+- [x] `gh` CLI installed; HTTPS push works via macOS keychain. Remote stays HTTPS.
 
-**Next session — Jekyll setup:**
-- [ ] Install Jekyll locally (check Ruby version first: `ruby -v`)
-- [ ] Scaffold `_config.yml`, `_layouts/`, `_posts/`, `assets/`
-- [ ] Build `default.html` layout inheriting the existing design system
-- [ ] Build `post.html` layout for blog posts
-- [ ] Create `_data/franks.yml` FCU character data file
-- [ ] Write first blog post: "The Franknapping" (summer 2022, Storyteller voice)
-- [ ] Add blog post index to homepage (2-3 most recent posts)
-- [ ] Push and verify GitHub Pages Jekyll build succeeds
+**Next session:**
+- [ ] Verify GitHub Pages Jekyll build succeeded — visit `https://footprintsoffrank.com/2022/07/frank-hits-the-road/`.
+- [ ] Write "The Franknapping" (summer 2022, Storyteller voice). Captain L. Belen appears as John's *brother*, retired police captain.
+- [ ] Create `_data/franks.yml` FCU character data file.
+- [ ] Optional: local Jekyll install for preview-before-push (`ruby -v` first).
+- [ ] Voice-calibration check on the next Frank-voice draft: canon Frank (per Section 6) is exclamation-rich and kid-energy; "Frank Hits the Road" leaned contemplative. Decide whether to do a light voice-up edit pass on the published post or accept the new register going forward.
 
 **After Jekyll:**
 - [ ] Apply design system to Facebook banner + Instagram profile/highlights
