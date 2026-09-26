@@ -13,3 +13,6 @@ Gemfile.lock
 
 # Camera originals — kept local, never deployed
 _originals/
+
+# Bulk archives, if one ever ends up nested here by mistake
+historic-archive/
