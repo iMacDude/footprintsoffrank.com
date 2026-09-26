@@ -32,13 +32,23 @@ for adults. The bourbon jokes are seasoning, not the meal. Fun first. Always.
 | Mobile editing | iPhone / iPad |
 
 **Jekyll conventions used in this repo:**
-- `index.html` — calling card landing page, at repo root, NOT processed as Jekyll (no front matter)
+- `index.html` — calling card landing page, at repo root. **Jekyll-processed as of
+  2026-09-26**, via empty front matter with no `layout:` key — it still carries its own
+  `<head>`/`<body>` shell, it just gets Liquid now. That drives the latest-post banner
+  and the "From the road" list. Before this it was static, and the "From the road"
+  section had been hardcoded to the July 2022 post since launch.
 - `_layouts/default.html` — master frame (header, rail, footer, zebra texture)
 - `_layouts/post.html` — blog post template, inherits default
 - `_posts/` — all blog posts as Markdown, named `YYYY-MM-DD-slug.md`
 - `assets/images/` — all site images
 - `assets/images/posts/YYYY-MM-DD-slug/` — per-post image folders
-- `_config.yml` — site settings, social links, author info
+- `_config.yml` — site settings, social links, author info, `formspree_id`
+- `_includes/site-nav.html` — the header menu, shared by `default.html` and `index.html`.
+  `<details>`/`<summary>`, no JavaScript. Its CSS lives in the include, not in either
+  page's `<style>` block, so there is exactly one place to change it.
+- `contact.md` — `/contact/`. The form renders only when `site.formspree_id` is set;
+  empty, the page shows email and socials and no form.
+- `_originals/` — camera originals. Gitignored, and Jekyll skips underscore dirs.
 
 **How to reference images in a post:**
 ```markdown
@@ -307,7 +317,19 @@ Until then: the footer line carries it. No fundraising appeals. Just quiet ackno
 - [x] CLAUDE.md corrected (2026-05-04): Captain L. Belen is John's *brother* (retired police captain); Francis "Frank" Belen Sr. is the *father* and the zebra's namesake.
 - [x] `gh` CLI installed; HTTPS push works via macOS keychain. Remote stays HTTPS.
 
+- [x] Header menu added (2026-09-26): About / Contact / Blog dropdown, `<details>`-based, no JS.
+- [x] Latest-post banner on the homepage (2026-09-26), fed by `site.posts.first`.
+- [x] `/contact/` page created (2026-09-26).
+- [x] "From the road" homepage section made dynamic — it had been stuck on the July 2022 post.
+- [x] "Back Where My Stripes Began" published (2026-09-26), dated 2026-06-12.
+- [x] Local Jekyll works again: `gem pristine eventmachine http_parser.rb json` fixed the
+      unbuilt native extensions that were blocking every `jekyll build`. Preview before push
+      is now possible — `jekyll build --destination /tmp/frank-build`.
+
 **Next session:**
+- [ ] **Create the Formspree form** for frank@footprintsoffrank.com and put the ID in
+      `formspree_id` in `_config.yml`. Until then `/contact/` shows email + socials only.
+      Do NOT reuse thebelens.com's ID (`xrejeegl`) — different site, different inbox.
 - [ ] Verify GitHub Pages Jekyll build succeeded — visit `https://footprintsoffrank.com/2022/07/frank-hits-the-road/`.
 - [ ] Write "The Franknapping" (summer 2022, Storyteller voice). Captain L. Belen appears as John's *brother*, retired police captain.
 - [ ] Create `_data/franks.yml` FCU character data file.
