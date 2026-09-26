@@ -327,9 +327,12 @@ Until then: the footer line carries it. No fundraising appeals. Just quiet ackno
       is now possible — `jekyll build --destination /tmp/frank-build`.
 
 **Next session:**
-- [ ] **Create the Formspree form** for frank@footprintsoffrank.com and put the ID in
-      `formspree_id` in `_config.yml`. Until then `/contact/` shows email + socials only.
-      Do NOT reuse thebelens.com's ID (`xrejeegl`) — different site, different inbox.
+- [ ] **Formspree — deferred by John on 2026-09-26.** `/contact/` stays email + socials
+      only for now, which is a working page, not a gap. The form is already built and
+      wired to `formspree_id` in `_config.yml`; setting that one value turns it on.
+      When the time comes: create a NEW form against frank@footprintsoffrank.com — do
+      NOT reuse thebelens.com's ID (`xrejeegl`), different site, different inbox. Check
+      the Formspree plan first, the free tier limits how many forms you get.
 - [ ] Verify GitHub Pages Jekyll build succeeded — visit `https://footprintsoffrank.com/2022/07/frank-hits-the-road/`.
 - [ ] Write "The Franknapping" (summer 2022, Storyteller voice). Captain L. Belen appears as John's *brother*, retired police captain.
 - [ ] Create `_data/franks.yml` FCU character data file.
