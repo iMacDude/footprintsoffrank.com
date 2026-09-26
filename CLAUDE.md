@@ -85,7 +85,12 @@ Do not substitute a generic red.
 - `Bebas Neue` — site title, section labels, large display type (all-caps, cinematic)
 - `Fraunces` — subheads, pull quotes, italic flourishes (optical serif, literary)
 - `Lora` — body prose (readable serif, warm)
-- All loaded from Google Fonts
+- **Self-hosted** from `/assets/fonts` — NOT Google Fonts. Loading them from
+  fonts.googleapis.com sent every visitor's IP to Google, contradicting the
+  "no Google services" rule below. Regenerate with
+  `python3 scripts/selfhost-fonts.py <google-css-url> assets/fonts assets/css/fonts.css /assets/fonts`.
+  Adding a weight or family means re-running it — do not hand-edit
+  `assets/css/fonts.css`, it is generated.
 
 **Structural elements — present on every page:**
 1. **Red rail** — 7px fixed left edge, full viewport height, `#A82423` with gradient shadows,
