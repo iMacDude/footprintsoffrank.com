@@ -1,3 +1,8 @@
+---
+# Front matter only so Jekyll renders the Liquid below (latest-post
+# banner and the From the road list). No layout: this page keeps its own
+# document shell.
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -172,6 +177,39 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   .footer-meta{flex-direction:column}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;animation-delay:0 !important}}
+
+/* Latest-post banner — thin strip above the hero, fed by site.posts.first */
+.latest-banner{
+  display:flex;align-items:stretch;gap:0;text-decoration:none;
+  background:var(--bg-hdr);border:1px solid var(--edge);border-left:3px solid var(--red);
+  margin:0 0 2.2rem;overflow:hidden;
+  transition:border-color .25s ease,transform .25s ease;
+  opacity:0;animation:fade-down .7s ease-out .85s forwards}
+.latest-banner:hover{border-color:var(--red)}
+.latest-banner:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.latest-banner-thumb{
+  width:72px;min-width:72px;height:72px;object-fit:cover;display:block;
+  border-right:1px solid var(--edge);filter:saturate(.92)}
+.latest-banner:hover .latest-banner-thumb{filter:none}
+.latest-banner-text{display:flex;flex-direction:column;justify-content:center;gap:.22rem;padding:.7rem 1.2rem;min-width:0;flex:1}
+.latest-banner-label{
+  font-family:'Bebas Neue',sans-serif;letter-spacing:.22em;font-size:.7rem;color:var(--red);line-height:1}
+.latest-banner-title{
+  font-family:'Fraunces',serif;font-weight:600;font-size:1.02rem;color:var(--paper);line-height:1.25;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.latest-banner:hover .latest-banner-title{color:var(--fg)}
+.latest-banner-meta{font-family:'Bebas Neue',sans-serif;letter-spacing:.16em;font-size:.68rem;color:var(--fg3);line-height:1}
+.latest-banner-cta{
+  display:flex;align-items:center;padding:0 1.3rem;flex-shrink:0;
+  font-family:'Bebas Neue',sans-serif;letter-spacing:.2em;font-size:.8rem;color:var(--fg2);
+  border-left:1px solid var(--edge);transition:color .25s}
+.latest-banner:hover .latest-banner-cta{color:var(--red)}
+@media(max-width:640px){
+  .latest-banner-cta{display:none}
+  .latest-banner-title{white-space:normal;font-size:.95rem}
+  .latest-banner-thumb{width:60px;min-width:60px;height:60px}
+}
+@media(prefers-reduced-motion:reduce){.latest-banner{animation:none;opacity:1}}
 </style>
 </head>
 <body>
@@ -207,10 +245,26 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 <header>
   <div class="brand">Footprints of Frank</div>
   <div class="tagline">Frank the Happy Zebra makes people's day as he travels and makes new friends</div>
+  {% include site-nav.html %}
   <div class="zebra-border"></div>
 </header>
 
 <main>
+
+  {%- assign latest = site.posts.first -%}
+  {%- if latest -%}
+  <a class="latest-banner" href="{{ latest.url | relative_url }}">
+    {%- if latest.image %}
+    <img class="latest-banner-thumb" src="{{ latest.image | relative_url }}" alt="" loading="lazy" width="72" height="72">
+    {%- endif %}
+    <span class="latest-banner-text">
+      <span class="latest-banner-label">Latest from the road</span>
+      <span class="latest-banner-title">{{ latest.title }}</span>
+      <span class="latest-banner-meta">{{ latest.date | date: "%B %-d, %Y" }}{% if latest.location %} &middot; {{ latest.location }}{% endif %}</span>
+    </span>
+    <span class="latest-banner-cta">Read &rarr;</span>
+  </a>
+  {%- endif %}
 
   <section class="hero">
     <div class="hero-text">
@@ -243,7 +297,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
     </div>
   </section>
 
-  <section class="origin">
+  <section class="origin" id="origin">
     <div class="section-label">The origin</div>
     <h2 class="section-title">A $50 bet, a room full of antagonists, and a stuffed zebra that got away.</h2>
     <div class="origin-grid">
@@ -373,17 +427,17 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
     <div class="section-label">From the road</div>
     <h2 class="section-title">The blog is open. <em>Frank is writing.</em></h2>
     <div class="post-list">
+      {%- for post in site.posts limit: 3 %}
       <article class="post-card">
         <div class="post-card-meta">
-          <time datetime="2022-07-09">July 9, 2022</time>
-          <span class="post-card-loc">Somewhere Between Here and There</span>
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+          {%- if post.location %}<span class="post-card-loc">{{ post.location }}</span>{% endif %}
         </div>
-        <h3 class="post-card-title"><a href="/2022/07/frank-hits-the-road/">Frank Hits the Road</a></h3>
-        <p class="post-card-excerpt">
-          Dad and I have been putting some miles down this summer &mdash; real miles, the kind where the cooler is in the back seat, the cup holder is mine, and the road keeps unrolling like a long gray ribbon out ahead of us&hellip;
-        </p>
-        <a class="post-card-cta" href="/2022/07/frank-hits-the-road/">Read the full post &rarr;</a>
+        <h3 class="post-card-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p class="post-card-excerpt">{{ post.excerpt | strip_html | normalize_whitespace | truncate: 220 }}</p>
+        <a class="post-card-cta" href="{{ post.url | relative_url }}">Read the full post &rarr;</a>
       </article>
+      {%- endfor %}
     </div>
   </section>
 

@@ -20,6 +20,12 @@ social:
     - https://www.instagram.com/footprintsoffrank/
     - https://www.facebook.com/footprintsoffrank/
 
+# Formspree form ID for /contact/ (the bit after formspree.io/f/).
+# Create the form at formspree.io against frank@footprintsoffrank.com and
+# paste the ID here. Left empty, the contact page hides the form and shows
+# the email address on its own — it never renders a dead form.
+formspree_id: ""
+
 # Build
 markdown: kramdown
 highlighter: rouge

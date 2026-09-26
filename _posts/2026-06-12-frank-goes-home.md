@@ -1,8 +1,8 @@
 ---
 title: "Back Where My Stripes Began"
-date: 2026-06-04
+date: 2026-06-12
 location: "Carmel, Indiana"
-image: /assets/images/posts/2026-06-04-frank-goes-home/frank-renaissance-homecoming.jpg
+image: /assets/images/posts/2026-06-12-frank-goes-home/frank-renaissance-homecoming.jpg
 image_alt: Frank the zebra standing in the Renaissance Indianapolis North lobby beneath the hotel's glowing R sign
 image_caption: "The Renaissance Indianapolis North, Carmel, Indiana — June 2026. Frank, home at the bar where it all began four years earlier."
 ---
