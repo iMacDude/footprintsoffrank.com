@@ -54,3 +54,15 @@ exclude:
   - README.md
   - CLAUDE.md
   - .claude
+
+# Like buttons on posts. OFF until the Cloudflare Worker that backs them is
+# deployed -- see ~/Sites/thebelens.com/workers/likes/README.md.
+#
+# THE WORKER LIVES ON thebelens.com, NOT HERE. This domain has no Cloudflare
+# zone (GoDaddy nameservers -> GitHub Pages), so it cannot host a Worker route
+# at all; the button calls John's other domain cross-origin. `likes_site` keeps
+# this site's counts in their own KV keys, so a slug shared with a post on
+# thebelens.com does not share a counter.
+likes_enabled: false
+likes_api: "https://thebelens.com/api/likes"
+likes_site: "fof"

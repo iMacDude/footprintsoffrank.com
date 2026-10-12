@@ -27,6 +27,8 @@ layout: default
     {{ content }}
   </div>
 
+  {% if site.likes_enabled %}{% include likes.html %}{% endif %}
+
   <nav class="post-nav">
     <a href="{{ '/' | relative_url }}">&larr; Back to footprintsoffrank.com</a>
   </nav>
