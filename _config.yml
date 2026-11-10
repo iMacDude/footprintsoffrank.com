@@ -54,6 +54,11 @@ exclude:
   - README.md
   - CLAUDE.md
   - .claude
+  # Build-time tooling, not website content. scripts/ is COMMITTED on purpose
+  # (it regenerates assets/css/fonts.css) but Jekyll's exclude: is a SEPARATE
+  # system from .gitignore, so without this line it ships: selfhost-fonts.py
+  # answered HTTP 200 on the live site until 2026-11-10.
+  - scripts
 
 # Like buttons on posts. OFF until the Cloudflare Worker that backs them is
 # deployed -- see ~/Sites/thebelens.com/workers/likes/README.md.
